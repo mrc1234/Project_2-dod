@@ -6,13 +6,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index">Home </a>
+            </li>
             <li class="nav-item active">
-              <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="survey">Survey<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="survey">Survey</a>
+              <a class="nav-link disabled" href="#">Disabled</a>
             </li>
-            
           </ul>
 
           <!-- login form goes here -->
@@ -32,7 +34,8 @@
       <div class="col-8 offset-2">
         <!--Get rid of this message -->
         <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
+        <h2>Survey</h2>
+        <!--  -->
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
             <label for="example-text">Example Text</label>
@@ -54,7 +57,7 @@
           {{/each}}
         </ul>
       </div>
-      <a href="/signup"><button>signup</button></a>
     </div>
   </div>
 </div>
+
