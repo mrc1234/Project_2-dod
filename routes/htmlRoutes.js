@@ -1,7 +1,8 @@
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = function(app) { 
   // Load index page
+
   app.get("/", function(req, res) {
     res.render("index");
   });
@@ -15,9 +16,10 @@ module.exports = function(app) {
     res.render("result");
   });
   // Load the survey page
-  app.get("/servey", function(req, res) {
+  app.get("/survey", function(req, res) {
     res.render("surveypage");
   });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
