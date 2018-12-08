@@ -7,6 +7,10 @@ module.exports = function(app) {
     res.render("index");
   });
 
+  app.get("/index", function(req, res) {
+    res.render("index");
+  });
+
   //html routes for the sign up page
   app.get("/signup", function(req, res) {
     res.render("signup");
@@ -17,8 +21,13 @@ module.exports = function(app) {
   });
   // Load the survey page
   app.get("/survey", function(req, res) {
-    res.render("surveypage");
+    res.render("survey");
   });
+
+// Load the services (APIs) page
+app.get("/services", function(req, res) {
+  res.render("services");
+});
 
 
 
