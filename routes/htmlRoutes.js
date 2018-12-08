@@ -1,13 +1,14 @@
 var db = require("../models");
 
-module.exports = function(app) { 
+module.exports = function(app) {
   // Load index page
+  app.get("/", function(req, res) { 
+      res.render("index");
+    });
+  
 
-  app.get("/", function(req, res) {
-    res.render("index");
-  });
-
-  app.get("/index", function(req, res) {
+  // Load index page
+  app.get("/index", function(req, res) { 
     res.render("index");
   });
 
@@ -21,6 +22,7 @@ module.exports = function(app) {
   });
   // Load the survey page
   app.get("/survey", function(req, res) {
+
     res.render("survey");
   });
 
@@ -34,13 +36,5 @@ app.get("/services", function(req, res) {
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
-  });
-  //load the in file user's info for the pre-exist user
-  app.get("/users/:id", function(req, res) {
-    db.User_info.findOne({ where: { id: req.params.id } }).then(function(
-      dbUser
-    ) {
-      res.render("userpage", { user: dbUser });
-    });
   });
 };
