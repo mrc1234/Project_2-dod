@@ -12,7 +12,6 @@ module.exports = function(app) {
     res.render("index");
   });
 
-
   //html routes for the sign up page
   app.get("/signup", function(req, res) {
     res.render("signup");
