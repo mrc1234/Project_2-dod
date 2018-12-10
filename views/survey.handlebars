@@ -1,63 +1,149 @@
 <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="index">Developers of Data</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index">Home </a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="survey">Survey<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="index">Developers of Data</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="services">Services </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="survey">Survey <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="signup">Sign Up</a>
+        </li>
+      </ul>
 
-          <!-- login form goes here -->
-          <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Login" aria-label="Login">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-          <!--end login form -->
-        </div>
-      </nav>
-    </header>
+      <!-- login form goes here -->
+      <form class="form-inline mt-2 mt-md-0">
+        <a href="signup" class="btn btn-outline-success my-2 my-sm-0">Login</a>
+      </form>
+      <!--end login form -->
+    </div>
+  </nav>
+</header>
 
-    
+
 <div id="home">
   <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
         <!--Get rid of this message -->
-        <h1>{{msg}}</h1>
-        <h2>Survey</h2>
+        <h1>Survey</h1>
+
         <!--  -->
-        <form class="clearfix mb-4" action="POST">
+        <p>Please provide us with the following information about your company</p>
+        <form class="clearfix mb-4 form-inline" action="POST">
+         <!--<div class="form-row">-->
+            <div class="form-group form-inline">
+              <label for="company_name">Company Name: </label>
+              <input type="string" id="company-name" class="form-control" aria-describedby="company-name" placeholder="Your Company.">
+            </div>
+
+            <div class="form-group ">
+              <label for="position">Position: </label>
+              <input type="string" class="form-control" id="position" aria-describedby="position" placeholder="Your Job Title"></textarea>
+            </div>
+
+            <div class="form-group ">
+              <label for="phone_number">Phone Number: </label>
+              <input type="tel" class="form-control" id="phone-number" aria-describedby="phone-number" placeholder="Phone Number"></textarea>
+            </div>
+         <!-- </div> -->
+
+          <div class="form-row">
           <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+            <label for="number_workers">Number of Employees: </label>
+            <input type="integer" class="form-control" id="number-workers" aria-describedby="number-employees"
+              placeholder=" "></textarea>
           </div>
+
           <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
+            <label for="year_established">Year Established: </label>
+            <input type="integer" min="4" max="4" width="4" class="form-control" id="year-established" aria-describedby="year-established"
+              placeholder="2009"></textarea>
           </div>
+
+          <div class="form-group">
+            <label for="office_number">Office Number: </label>
+            <input type="tel" class="form-control" id="office-number" aria-describedby="office-number" placeholder="Office Phone Number"></textarea>
+          </div>
+          </div>
+
+          <div class="form-group">
+            <label for="social_media">List Social Media Platforms: </label>
+            <textarea class="form-control" id="social-media" aria-describedby="social-media" placeholder="Facebook, Twitter, Linkedin, YouTube, etc."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="website">Current website address</label>
+            <string class="form-control" id="website" aria-describedby="web-address" placeholder="mycompany.com"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="platform">What is your current Website Platform</label>
+            <textarea class="form-control" id="position" aria-describedby="position" placeholder="i.e. Magento"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="own_server">Does your company own its own web server?</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="own_server" id="own-server-1" value="Yes">
+              <label class="form-check-label" for="own-server-1">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="own_server" id="own-server-2" value="No">
+              <label class="form-check-label" for="own-server-2">No</label>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="server_onsite">Is your web server onsite?</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="server_onsite" id="own-server-1" value="Yes">
+              <label class="form-check-label" for="own-server-1">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="server_onsite" id="own-server-2" value="No">
+              <label class="form-check-label" for="own-server-2">No</label>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="cloud_server">Do you use a cloud server?</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="cloud_server" id="cloud-server-1" value="Yes">
+              <label class="form-check-label" for="cloud-server-1">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="cloud_server" id="cloud-server-2" value="No">
+              <label class="form-check-label" for="cloud-server-2">No</label>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="collect_user_data">Do you collect user data?</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="collect_user_data" id="collect-user-data-1" value="Yes">
+              <label class="form-check-label" for="collect-user-data-1">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="collect_user_data" id="collect-user-data-2" value="No">
+              <label class="form-check-label" for="collect-user-data-2">No</label>
+            </div>
+          </div>
+
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
+
       </div>
     </div>
   </div>
 </div>
-

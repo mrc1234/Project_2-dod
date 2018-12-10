@@ -12,10 +12,23 @@ module.exports = function(app) {
     res.render("index");
   });
 
-  // Load survey page
-  app.get("/survey", function(req, res) { 
+  //html routes for the sign up page
+  app.get("/signup", function(req, res) {
+    res.render("signup");
+  });
+  //html to show the outcome after user answered survey
+  app.get("/result", function(req, res) {
+    res.render("result");
+  });
+  // Load the survey page
+  app.get("/survey", function(req, res) {
     res.render("survey");
   });
+
+// Load the services (APIs) page
+app.get("/services", function(req, res) {
+  res.render("services");
+});
 
 
 
