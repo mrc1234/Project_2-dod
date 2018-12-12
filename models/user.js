@@ -1,12 +1,12 @@
 module.exports = function(sequelize, DataTypes) {
-    var User = sequelize.define("user", {
-      name: {
-        type: DataTypes.STRING,
-      },
-      company_name: {
-        type: DataTypes.STRING
-      },
-      email: {
+  var User = sequelize.define("user", {
+    name: {
+      type: DataTypes.STRING
+    },
+    company_name: {
+      type: DataTypes.STRING
+    },
+    email: {
         type: DataTypes.STRING,
         isUnique: true,
         allowNull: false,
