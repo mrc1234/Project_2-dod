@@ -37,7 +37,7 @@
 
         <!--  -->
         <p>Please provide us with the following information about your company</p>
-        <form class="clearfix mb-4 form-inline" action="POST">
+        <form class="clearfix mb-4 form-inline" >
          <!--<div class="form-row">-->
             <div class="form-group form-inline">
               <label for="company_name">Company Name: </label>
@@ -58,13 +58,13 @@
           <div class="form-row">
           <div class="form-group">
             <label for="number_workers">Number of Employees: </label>
-            <input type="integer" class="form-control" id="number-workers" aria-describedby="number-employees"
+            <input  type="integer" class="form-control" id="number-workers" aria-describedby="number-employees"
               placeholder=" "></textarea>
           </div>
 
           <div class="form-group">
             <label for="year_established">Year Established: </label>
-            <input type="integer" min="4" max="4" width="4" class="form-control" id="year-established" aria-describedby="year-established"
+            <input  type="integer" min="4" max="4" width="4" class="form-control" id="year-established" aria-describedby="year-established"
               placeholder="2009"></textarea>
           </div>
 
@@ -81,7 +81,7 @@
 
           <div class="form-group">
             <label for="website">Current website address</label>
-            <string class="form-control" id="website" aria-describedby="web-address" placeholder="mycompany.com"></textarea>
+            <input type="string" class="form-control" id="website" aria-describedby="web-address" placeholder="mycompany.com"></textarea>
           </div>
 
           <div class="form-group">
@@ -92,11 +92,11 @@
           <div class="form-group">
             <label for="own_server">Does your company own its own web server?</label>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="own_server" id="own-server-1" value="Yes">
+              <input class="form-check-input" type="radio" name="own_server" id="own-server-1"  value="true">
               <label class="form-check-label" for="own-server-1">Yes</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" name="own_server" id="own-server-2" value="No">
+              <input class="form-check-input" type="radio" name="own_server" id="own-server-2" value="false">
               <label class="form-check-label" for="own-server-2">No</label>
             </div>
           </div>
@@ -105,11 +105,11 @@
           <div class="form-group">
             <label for="server_onsite">Is your web server onsite?</label>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="server_onsite" id="own-server-1" value="Yes">
+              <input class="form-check-input" type="radio" name="server_onsite" id="own-server-1"  value="true">
               <label class="form-check-label" for="own-server-1">Yes</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="server_onsite" id="own-server-2" value="No">
+              <input class="form-check-input" type="radio" name="server_onsite" id="own-server-2" value="false">
               <label class="form-check-label" for="own-server-2">No</label>
             </div>
           </div>
@@ -118,11 +118,11 @@
           <div class="form-group">
             <label for="cloud_server">Do you use a cloud server?</label>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="cloud_server" id="cloud-server-1" value="Yes">
+              <input class="form-check-input" type="radio" name="cloud_server" id="cloud-server-1"  value="true">
               <label class="form-check-label" for="cloud-server-1">Yes</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="cloud_server" id="cloud-server-2" value="No">
+              <input class="form-check-input" type="radio" name="cloud_server" id="cloud-server-2" value="false">
               <label class="form-check-label" for="cloud-server-2">No</label>
             </div>
           </div>
@@ -131,19 +131,20 @@
           <div class="form-group">
             <label for="collect_user_data">Do you collect user data?</label>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="collect_user_data" id="collect-user-data-1" value="Yes">
+              <input class="form-check-input" type="radio" name="collect_user_data" id="collect-user-data-1"  value="true">
               <label class="form-check-label" for="collect-user-data-1">Yes</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="collect_user_data" id="collect-user-data-2" value="No">
+              <input class="form-check-input" type="radio" name="collect_user_data" id="collect-user-data-2" value="false">
               <label class="form-check-label" for="collect-user-data-2">No</label>
             </div>
           </div>
 
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
+          <button id="survey-submit" class="btn btn-primary float-right">Submit</button>
         </form>
 
       </div>
     </div>
   </div>
 </div>
+<script type="text/javascript" src="js/survey.js"></script>
