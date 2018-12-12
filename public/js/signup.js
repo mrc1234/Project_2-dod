@@ -18,7 +18,14 @@ $(document).ready(function() {
     };
 
     console.log("the user sign up post" + JSON.stringify(data));
-    //this may not work , need to refer to the apiRoutes foe correct api url
+    $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      },
+      type: "POST",
+      url: "api/newuser",
+      data: JSON.stringify(data)
+    });
   }
   $(".cancelbtn").on("click", function(event) {
     event.preventDefault();
