@@ -3,9 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   // Get all examples
   app.get("/api/users", function(req, res) {
-
     db.user.findAll({}).then(function(dbUser) {
-
       res.json(dbUser);
     });
   });
@@ -17,13 +15,13 @@ module.exports = function(app) {
     });
   });
 
-    // create the new post for the survey questions
-    app.post("/api/newinfo", function(req, res) {
-      console.log(req.body);
-      db.user_info.create(req.body).then(function(dbinfo) {
-        res.json(dbinfo);
-      });
+  // create the new post for the survey questions
+  app.post("/api/newinfo", function(req, res) {
+    console.log(req.body);
+    db.user_info.create(req.body).then(function(dbinfo) {
+      res.json(dbinfo);
     });
+  });
 
  // Update if user want to change their survey answers in their account to explore more ways
  app.put("/api/newinfo", function(req, res) {

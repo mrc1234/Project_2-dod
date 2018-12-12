@@ -1,21 +1,22 @@
 <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="index">Developers of Data</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="services">Services </a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="survey">Survey <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="signup">Sign Up</a>
-            </li>
-          </ul>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="index">Developers of Data</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="services">Services </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="survey">Survey <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="signup">Sign Up</a>
+        </li>
+      </ul>
 
       <!-- login form goes here -->
       <form class="form-inline mt-2 mt-md-0">
@@ -32,27 +33,19 @@
     <p>Please fill in this form to create an account.</p>
     <hr>
     <label for="name"><b>Name</b></label>
-    <input type="text" placeholder="Enter Full name" name="name"  required="required" id="fullname">
+    <input type="text" placeholder="Enter Full name" name="name" required="required" id="full-name">
     <label for="company_name"><b>Company</b></label>
-    <input type="text" placeholder="Enter Your Company's Name" name="company-name"  required="required" id="company-name">
+    <input type="text" placeholder="Enter Your Company's Name" name="company-name" required="required" id="company-name">
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" required="required" id="email">
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required="required" id="password">
-
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat"  required="required">
     
-    <label>
-      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-    </label>
-    
-    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
     <div class="clearfix">
       <button type="button" class="cancelbtn">Cancel</button>
       <button type="submit" class="signupbtn">Sign Up</button>
     </div>
   </div>
 </form>
+<script src="js/signup.js"></script>
