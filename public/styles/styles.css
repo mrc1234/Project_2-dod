@@ -2,11 +2,24 @@
   line-height: 2.5;
 }
 /*the following is the css for the sign up page*/
-body {font-family: Arial, Helvetica, sans-serif;}
+body {font-family: Arial, Helvetica, sans-serif;
+background-color: #ddd;
+}
 * {box-sizing: border-box}
 
-/* Full-width input fields */
-input[type=text], input[type=password] {
+p {font-weight:400;}
+
+h1 {font-weight:900;}
+
+h2, h3, h4, h5, h6 {font-weight:700;}
+
+label {
+    font-weight: 600;
+}
+
+
+/* Full-width input fields*/
+input[type=text], input[type=password], input[type=string] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -20,10 +33,16 @@ input[type=text]:focus, input[type=password]:focus {
     outline: none;
 }
 
+.form-group.input {
+    padding:10px;
+    
+}
+
 hr {
     border: 1px solid #f1f1f1;
     margin-bottom: 25px;
 }
+
 
 /* Set a style for all buttons */
 button {
@@ -33,7 +52,7 @@ button {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    
     opacity: 0.9;
 }
 
@@ -71,4 +90,6 @@ button:hover {
        width: 100%;
     }
 }
+
+
 /*end of the sign up page css*/
