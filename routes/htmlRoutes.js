@@ -1,14 +1,13 @@
-var db = require("../models");
+//var db = require("../models");
 
 module.exports = function(app) {
   // Load index page
-  app.get("/", function(req, res) { 
-      res.render("index");
-    });
-  
+  app.get("/", function(req, res) {
+    res.render("index");
+  });
 
   // Load index page
-  app.get("/index", function(req, res) { 
+  app.get("/index", function(req, res) {
     res.render("index");
   });
 
@@ -25,12 +24,10 @@ module.exports = function(app) {
     res.render("survey");
   });
 
-// Load the services (APIs) page
-app.get("/services", function(req, res) {
-  res.render("services");
-});
-
-
+  // Load the services (APIs) page
+  app.get("/services", function(req, res) {
+    res.render("services");
+  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {

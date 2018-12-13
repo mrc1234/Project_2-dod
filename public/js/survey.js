@@ -9,14 +9,15 @@ $(document).ready(function() {
   var socialMedia = $("#social-media");
   var website = $("#website");
   var webPlatform = $("textarea#position");
-  //capture the yes or no answer; error it only shows true even  select no
-  var ownServer = $("input[name=own_server]:radio");
-  var onsite = $("input[name=server_onsite]:radio");
-  var cloudServer = $("input[name=cloud_server]:radio");
-  var dataCollection = $("input[name=collect_user_data]:radio");
 
   $("#survey-submit").on("click", function(event) {
     event.preventDefault();
+    //capture the selected yes or no answers
+    var ownServer = $("input[name=own_server]:checked").val();
+    var onsite = $("input[name=server_onsite]:checked").val();
+    var cloudServer = $("input[name=cloud_server]:checked").val();
+    var dataCollection = $("input[name=collect_user_data]:checked").val();
+    //declare a variable to save all the stored inputs
     var surveyData = {
       company_name: companyName.val().trim(),
       position: position.val().trim(),
@@ -27,10 +28,10 @@ $(document).ready(function() {
       social_media: socialMedia.val().trim(),
       website: website.val().trim(),
       plate_form: webPlatform.val().trim(),
-      own_server: ownServer.val().trim(),
-      server_onsite: onsite.val().trim(),
-      cloud_server: cloudServer.val().trim(),
-      collect_user_data: dataCollection.val().trim()
+      own_server: ownServer,
+      server_onsite: onsite,
+      cloud_server: cloudServer,
+      collect_user_data: dataCollection
     };
     console.log(surveyData);
     $.ajax({
