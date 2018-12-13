@@ -10,41 +10,75 @@
         <li class="nav-item">
           <a class="nav-link" href="services">Services </a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="survey">Survey <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="signup">Sign Up</a>
         </li>
       </ul>
-
-      <!-- login form goes here -->
-      <form class="form-inline mt-2 mt-md-0">
-        <a href="signup" class="btn btn-outline-success my-2 my-sm-0">Login</a>
-      </form>
+      <!-- login button -->
+      <button type="button" class="btn d-inline mr-sm-2" data-toggle="modal" data-target="#loginModal">
+        Login
+      </button>
       <!--end login form -->
     </div>
   </nav>
 </header>
 
-<form style="border:1px solid #ccc">
-  <div class="container">
-    <h1>Sign Up</h1>
-    <p>Please fill in this form to create an account.</p>
-    <hr>
-    <label for="name"><b>Name</b></label>
-    <input type="text" placeholder="Enter Full name" name="name" required="required" id="full-name">
-    <label for="company_name"><b>Company</b></label>
-    <input type="text" placeholder="Enter Your Company's Name" name="company-name" required="required" id="company-name">
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required="required" id="email">
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required="required" id="password">
-    
-    <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
+  <div class="container" style="margin-top:20px;">
+        <!-- login modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="login form-inline mt-2 mt-md-0">
+              <input class="form-control mr-sm-2" type="email" id="email-input" placeholder="Email">
+              <input type="password" class="form-control mr-sm-2" id="password-input" placeholder="Password">
+              <button type="submit" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#popUpWindow">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end login modal -->
+    <div class="row">
+      <div class="col-8 offset-2">
+        <form>
+        <h2>Sign Up</h2>
+        <h6>Please fill in this form to create an account.</h6>
+        <hr>
+        <label for="name">Name</label>
+        <input type="text" placeholder="Enter Full name" name="name" required="required" id="fullname">
+        <label for="company_name">Company</label>
+        <input type="text" placeholder="Enter Your Company's Name" name="company-name" required="required" id="company-name">
+        <label for="email">Email</label>
+        <input type="text" placeholder="Enter Email" name="email" required="required" id="email">
+
+        <label for="psw">Password</label>
+        <input type="password" placeholder="Enter Password" name="psw" required="required" id="password">
+
+        <label for="psw-repeat">Repeat Password</label>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat" required="required">
+
+        <label>
+          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+        </label>
+
+        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+        <div class="clearfix">
+          <button type="button" class="cancelbtn">Cancel</button>
+          <button type="submit" class="signupbtn">Sign Up</button>
+        </div>
+      </div>
     </div>
   </div>
 </form>

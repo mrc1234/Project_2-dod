@@ -17,77 +17,108 @@
           <a class="nav-link" href="signup">Sign Up</a>
         </li>
       </ul>
-
       <!-- login form goes here -->
-      <form class="form-inline mt-2 mt-md-0">
-        <a href="signup" class="btn btn-outline-success my-2 my-sm-0">Login</a>
-      </form>
+      <button type="button" class="btn d-inline mr-sm-2 " data-toggle="modal" data-target="#loginModal">
+        Login
+      </button>
       <!--end login form -->
+
     </div>
   </nav>
 </header>
 
 
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <!--Get rid of this message -->
-        <h1>Survey</h1>
 
-        <!--  -->
-        <p>Please provide us with the following information about your company</p>
-        <form class="clearfix mb-4 form-inline" >
-         <!--<div class="form-row">-->
-            <div class="form-group form-inline">
-              <label for="company_name">Company Name: </label>
-              <input type="string" id="company-name" class="form-control" aria-describedby="company-name" placeholder="Your Company.">
-            </div>
+<div class="container" style="margin-top:20px;">
+ <!-- login modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="login form-inline mt-2 mt-md-0" action="POST">
+              <input class="form-control mr-sm-2" type="email" id="email-input" placeholder="Email">
+              <input type="password" class="form-control mr-sm-2" id="password-input" placeholder="Password">
+              <button type="submit" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#popUpWindow">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end login modal -->
+  <div class="row">
+    <div class="col-8 offset-2">
 
-            <div class="form-group ">
-              <label for="position">Position: </label>
-              <input type="string" class="form-control" id="position" aria-describedby="position" placeholder="Your Job Title"></textarea>
-            </div>
+      <!--Get rid of this message -->
+<form>
+<h2>Survey</h2>
+      <!--  -->
+      <p>Please provide us with the following information about your company</p>
 
-            <div class="form-group ">
-              <label for="phone_number">Phone Number: </label>
-              <input type="tel" class="form-control" id="phone-number" aria-describedby="phone-number" placeholder="Phone Number"></textarea>
-            </div>
-         <!-- </div> -->
+      <!--<div class="form-row">-->
+       <div class="form-group">
+        <label for="name">Name: </label>
+        <input type="text" class="form-control" placeholder="Enter Full name" name="name" required="required" id="fullname">
+      </div>
 
-          <div class="form-row">
+ 
+     <div class="form-group">
+        <label for="company_name">Company Name: </label>
+        <input type="string" id="company-name" class="form-control" aria-describedby="company-name" placeholder="Your Company.">
+      </div>
+
+      <div class="form-group ">
+        <label for="position">Position: </label>
+        <input type="string" class="form-control" id="position" aria-describedby="position" placeholder="Your Job Title"></textarea>
+      </div>
+
+      <div class="form-group ">
+        <label for="phone_number">Phone Number: </label>
+        <input type="tel" class="form-control" id="phone-number" aria-describedby="phone-number" placeholder="Phone Number"></textarea>
+      </div>
+      <!-- </div> -->
+
+      <div class="form-row">
+        <div class="col-md-6">
           <div class="form-group">
             <label for="number_workers">Number of Employees: </label>
             <input  type="integer" class="form-control" id="number-workers" aria-describedby="number-employees"
               placeholder=" "></textarea>
           </div>
-
+        </div>
+        <div class="col-md-6">
           <div class="form-group">
             <label for="year_established">Year Established: </label>
             <input  type="integer" min="4" max="4" width="4" class="form-control" id="year-established" aria-describedby="year-established"
               placeholder="2009"></textarea>
           </div>
+        </div>
 
-          <div class="form-group">
-            <label for="office_number">Office Number: </label>
-            <input type="tel" class="form-control" id="office-number" aria-describedby="office-number" placeholder="Office Phone Number"></textarea>
-          </div>
-          </div>
+        <div class="form-group">
+          <label for="office_number">Office Number: </label>
+          <input type="tel" class="form-control" id="office-number" aria-describedby="office-number" placeholder="Office Phone Number"></textarea>
+        </div>
+      </div>
 
-          <div class="form-group">
-            <label for="social_media">List Social Media Platforms: </label>
-            <textarea class="form-control" id="social-media" aria-describedby="social-media" placeholder="Facebook, Twitter, Linkedin, YouTube, etc."></textarea>
-          </div>
+      <div class="form-group">
+        <label for="social_media">List Social Media Platforms: </label>
+        <textarea class="form-control" id="social-media" aria-describedby="social-media" placeholder="Facebook, Twitter, Linkedin, YouTube, etc."></textarea>
+      </div>
 
-          <div class="form-group">
-            <label for="website">Current website address</label>
-            <input type="string" class="form-control" id="website" aria-describedby="web-address" placeholder="mycompany.com"></textarea>
-          </div>
+      <div class="form-group">
+        <label for="website">Current website address</label>
+        <input type="string" class="form-control" id="website" aria-describedby="web-address" placeholder="mycompany.com"></textarea>
+      </div>
 
-          <div class="form-group">
-            <label for="platform">What is your current Website Platform</label>
-            <textarea class="form-control" id="position" aria-describedby="position" placeholder="i.e. Magento"></textarea>
-          </div>
+      <div class="form-group">
+        <label for="platform">What is your current Website Platform</label>
+        <textarea class="form-control" id="position" aria-describedby="position" placeholder="i.e. Magento"></textarea>
+      </div>
 
           <div class="form-group">
             <label for="own_server">Does your company own its own web server?</label>
@@ -143,8 +174,11 @@
           <button id="survey-submit" class="btn btn-primary float-right">Submit</button>
         </form>
 
+      <div class="row">
+        <div class="col-6 offset-3"><button id="submit" class="btn btn-primary float-right">Submit</button></div>
       </div>
     </div>
   </div>
 </div>
+</form>
 <script type="text/javascript" src="js/survey.js"></script>
