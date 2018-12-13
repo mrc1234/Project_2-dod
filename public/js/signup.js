@@ -9,26 +9,39 @@ $(document).ready(function() {
 
   function submitSignup(event) {
     event.preventDefault();
-    //variable for store all inputs in the signup page
-    var data = {
-      name: userFullName.val().trim(),
-      company_name: companyName.val().trim(),
-      email: email.val().trim(),
-      password: password.val().trim()
-    };
 
-    console.log("the user sign up post" + JSON.stringify(data));
-    $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/newuser",
-      data: JSON.stringify(data)
+    var isFormValid = true;
+    //Check to see if all the field are filled
+    $("input").each(function() {
+      if ($.trim($(this).val()).length === 0) {
+        isFormValid = false;
+      }
     });
+    if (!isFormValid) {
+      alert("Please fill in all the fields");
+    } else if (isFormValid) {
+      //variable for store all inputs in the signup page
+      var data = {
+        name: userFullName.val().trim(),
+        company_name: companyName.val().trim(),
+        email: email.val().trim(),
+        password: password.val().trim()
+      };
+      console.log("the user sign up post" + JSON.stringify(data));
+      //post the data
+      $.ajax({
+        headers: {
+          "Content-Type": "application/json"
+        },
+        type: "POST",
+        url: "api/newuser",
+        data: JSON.stringify(data)
+      });
+    }
   }
   $(".cancelbtn").on("click", function(event) {
     event.preventDefault();
-    //use the get mehtod to return to the main page
+    //return to the main page
+    window.location = "/";
   });
 });
