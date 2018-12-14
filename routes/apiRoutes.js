@@ -1,7 +1,7 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
+  // Get all users
   app.get("/api/users", function(req, res) {
     db.user.findAll({}).then(function(dbUser) {
       res.json(dbUser);
@@ -22,27 +22,5 @@ module.exports = function(app) {
     db.information.create(req.body).then(function(dbinfo) {
       res.json(dbinfo);
     });
-  });
-
-  // Update if user want to change their survey answers in their account to explore more ways
-  app.put("/api/newinfo", function(req, res) {
-    db.user_info
-      .update(req.body, {
-        where: {
-          id: req.body.id
-        }
-      })
-      .then(function(dbPost) {
-        res.json(dbPost);
-      });
-  });
-
-  // Delete a post by id
-  app.delete("/api/newinfo/:id", function(req, res) {
-    db.user_info
-      .destroy({ where: { id: req.params.id } })
-      .then(function(dbinfo) {
-        res.json(dbinfo);
-      });
   });
 };
