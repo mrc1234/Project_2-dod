@@ -1,9 +1,6 @@
 $(document).ready(function() {
   //id association from the sign up page
-  var userFullName = $("#full-name");
-  var companyName = $("#company-name");
-  var email = $("#email");
-  var password = $("#password");
+
 
   $(document).on("click", ".signupbtn", submitSignup);
 
@@ -12,7 +9,7 @@ $(document).ready(function() {
 
     var isFormValid = true;
     //Check to see if all the field are filled
-    $("input").each(function() {
+    $("#signup-form input").each(function() {
       if ($.trim($(this).val()).length === 0) {
         isFormValid = false;
       }
@@ -21,6 +18,12 @@ $(document).ready(function() {
       alert("Please fill in all the fields");
     } else if (isFormValid) {
       //variable for store all inputs in the signup page
+      //id association from the sign up page
+  var userFullName = $("#full-name");
+  var companyName = $("#company-name");
+  var email = $("#email");
+  var password = $("#password");
+      
       var data = {
         name: userFullName.val().trim(),
         company_name: companyName.val().trim(),
