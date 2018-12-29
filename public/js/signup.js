@@ -1,7 +1,4 @@
 $(document).ready(function() {
-  //id association from the sign up page
-
-
   $(document).on("click", ".signupbtn", submitSignup);
 
   function submitSignup(event) {
@@ -17,6 +14,11 @@ $(document).ready(function() {
     if (!isFormValid) {
       alert("Please fill in all the fields");
     } else if (isFormValid) {
+      //id association from the sign up page
+      var userFullName = $("#full-name");
+      var companyName = $("#company-name");
+      var email = $("#email");
+      var password = $("#password");
       //variable for store all inputs in the signup page
       //id association from the sign up page
   var userFullName = $("#full-name");
