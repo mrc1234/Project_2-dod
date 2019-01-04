@@ -20,6 +20,12 @@ $(document).ready(function() {
       var email = $("#email");
       var password = $("#password");
       //variable for store all inputs in the signup page
+      //id association from the sign up page
+  var userFullName = $("#full-name");
+  var companyName = $("#company-name");
+  var email = $("#email");
+  var password = $("#password");
+      
       var data = {
         name: userFullName.val().trim(),
         company_name: companyName.val().trim(),
