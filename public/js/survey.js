@@ -8,7 +8,7 @@ $(document).ready(function() {
   var officeNumber = $("#office-number");
   var socialMedia = $("#social-media");
   var website = $("#website");
-  var webPlatform = $("textarea#position");
+  var webPlatform = $("textarea#platform");
 
   $("#survey-submit").on("click", function(event) {
     event.preventDefault();
@@ -41,6 +41,12 @@ $(document).ready(function() {
       type: "POST",
       url: "api/newinfo",
       data: JSON.stringify(surveyData)
-    });
-  });
+    }).done(function(results) {
+      window.location.replace('result')
+    })
+   
+      });
+
+      
+      
 });

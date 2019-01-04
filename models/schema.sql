@@ -1,5 +1,4 @@
 
 
 --Main database--
-DROP DATABASE IF EXISTS project_2;
-CREATE DATABASE project_2;
+CREATE DATABASE IF NOT EXISTS project_2;

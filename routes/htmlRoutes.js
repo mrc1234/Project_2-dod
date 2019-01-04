@@ -31,8 +31,11 @@ module.exports = function(app) {
   })
   //html to show the outcome after user answered survey
   app.get("/result", function(req, res) {
+    console.log("get result")
     res.render("result");
   });
+
+  
   // Load the survey page
   app.get("/survey", function(req, res) {
     res.render("survey");

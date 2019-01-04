@@ -30,10 +30,24 @@ module.exports = function(app) {
   });
 
   // create the new post for the survey questions
-  app.post("/api/newinfo", function(req, res) {
+  app.post("/api/newinfo", function(req, res, next) {
     console.log(req.body);
     db.information.create(req.body).then(function(dbinfo) {
-      res.json(dbinfo);
+     // res.json(dbinfo);
+     next()
+    //  res.redirect(303, "/result");
+     }).catch(function(err) {
+      console.log(err);
+      res.json(err);
     });
+  }, function(req,res){
+    res.send({redirect: '/result'
   });
+
+
+
+
+});
 };
+
+
