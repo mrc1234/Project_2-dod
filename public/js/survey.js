@@ -27,7 +27,7 @@ $(document).ready(function() {
       office_number: officeNumber.val().trim(),
       social_media: socialMedia.val().trim(),
       website: website.val().trim(),
-      plate_form: webPlatform.val().trim(),
+      platform: webPlatform.val().trim(),
       own_server: ownServer,
       server_onsite: onsite,
       cloud_server: cloudServer,
@@ -41,12 +41,9 @@ $(document).ready(function() {
       type: "POST",
       url: "api/newinfo",
       data: JSON.stringify(surveyData)
-    }).done(function(results) {
-      window.location.replace('result')
-    })
-   
-      });
-
-      
-      
+    }).done(function(data) {
+      window.location.replace("result");
+      console.log(data);
+    });
+  });
 });
