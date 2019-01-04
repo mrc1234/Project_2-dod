@@ -27,7 +27,7 @@ $(document).ready(function() {
       office_number: officeNumber.val().trim(),
       social_media: socialMedia.val().trim(),
       website: website.val().trim(),
-      plate_form: webPlatform.val().trim(),
+      platform: webPlatform.val().trim(),
       own_server: ownServer,
       server_onsite: onsite,
       cloud_server: cloudServer,
