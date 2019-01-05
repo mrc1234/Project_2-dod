@@ -42,12 +42,12 @@ module.exports = function (app) {
     console.log(req.body);
     db.information
       .create(req.body)
-      .then(function (dbinfo) {
+      .then(function(dbinfo) {
         res.json(dbinfo);
         next();
         //res.redirect(303, "/result");
       })
-      .catch(function (err) {
+      .catch(function(err) {
         console.log(err);
         res.json(err);
       });
