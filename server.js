@@ -5,8 +5,11 @@ var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 
-
 var db = require("./models");
+
+//AWS
+var AWS = require('aws-sdk');
+var uuid = require('uuid');
 
 var app = express();
 var PORT = process.env.PORT || 3000;

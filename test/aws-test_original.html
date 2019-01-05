@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Sample</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<input type="file" id="file-chooser" />
+<button id="upload-button">Upload to S3</button>
+<div id="results"></div>
+
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+<script type="text/javascript">
+
+  var bucket = new AWS.S3({params: {Bucket: 'project2dod'}});
+
+  var fileChooser = document.getElementById('file-chooser');
+  var button = document.getElementById('upload-button');
+  var results = document.getElementById('results'); 
+  button.addEventListener('click', function() {
+    var file = fileChooser.files[0];
+    console.log(fileChooser); 
+    if (file) {
+      results.innerHTML = '';
+      var params = {Key: file.name, ContentType: file.type, Body: file};
+      console.log(params);
+      bucket.putObject(params, function (err, data) {
+        results.innerHTML = err ? 'ERROR!' : 'UPLOADED.';
+      });
+    } else {
+      results.innerHTML = 'Nothing to upload.';
+    }
+  }, false);
+</script>
+</body>
+</html>

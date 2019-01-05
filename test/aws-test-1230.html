@@ -1,0 +1,65 @@
+<!--
+    Ref: https://qiita.com/ms2sato/items/f73a02f2ac14361247c3 (S3へ直接ファイルをアップロードする。Node.js版)
+    the source: https://gist.github.com/ms2sato/7336318
+    This is supposed to work with aws-test-1230.js
+-->
+<!--
+    Progress:
+    there is no upload button...
+-->
+
+<!doctype html>
+<html>
+<head>
+    <title>AWS Test 1230</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script src="//code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="aws-test-1230.js"></script>
+    <script>
+        $().ready(function () {
+            $('#s3form input[type="file"]').on('change', function (e) {
+                // ファイルの情報をチェックしてパラメータ生成.必要であれば許可ファイル以外をはじく.
+                var file = e.target.files[0];
+                var data = {ctype: file.type, clength: file.size};
+
+                // サーバからpolicyとsignatureを取得.
+                var $form = $('#s3form');
+                $.ajax({
+                    url: $form.attr('action'),
+                    type: $form.attr('method'),
+                    dataType: 'json',
+                    data: data
+                }).done(function (data) {
+                            // サーバが返した情報をそのまま使ってFormDataを作る.
+                            var name, fd = new FormData();
+                            for (name in data.form) if (data.form.hasOwnProperty(name)) {
+                                fd.append(name, data.form[name]);
+                            }
+                            fd.append('file', file); // ファイル添付.
+
+                            // 送信
+                            var xhr = new XMLHttpRequest();
+                            xhr.open('POST', data.url, true);
+                            xhr.onreadystatechange = function (aEvt) {
+                                if (xhr.readyState == 4) {
+                                    if (xhr.status == 200)
+                                        console.log(xhr.responseText);
+                                    else{
+                                        console.log('error');
+                                        console.log(xhr.responseText);
+                                    }
+                                }
+                            };
+                            xhr.send(fd);
+
+                        })
+            });
+        });
+    </script>
+</head>
+<body>
+<form id="s3form" action="upload" method="get" enctype="multipart/form-data">
+    <input type="file" name="file"/>
+</form>
+</body>
+</html>

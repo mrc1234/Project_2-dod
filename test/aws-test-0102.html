@@ -1,0 +1,59 @@
+<!--
+Reference: https://dev.classmethod.jp/cloud/aws-s3-direct-upload/
+For IAM user
+- Access key id: AKIAINJGXQDAZ2ON2BDA
+- Secret access key: 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
+- Policy and signature from aws-test-0101-0.js:
+  policy: eyAiZXhwaXJhdGlvbiI6ICIyMDIwLTEyLTAxVDEyOjAwOjAwLjAwMFoiLAogICAgICAgICAgICAiY29uZGl0aW9ucyI6IFsKICAgICAgICAgICAgeyJidWNrZXQiOiAicHJvamVjdDJkb2QifSwKICAgICAgICAgICAgWyJzdGFydHMtd2l0aCIsICIka2V5IiwgIiJdLAogICAgICAgICAgICB7ImFjbCI6ICJwcml2YXRlIn0sICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgIFsic3RhcnRzLXdpdGgiLCAiJENvbnRlbnQtVHlwZSIsICIiXSwKICAgICAgICAgICAgWyJjb250ZW50LWxlbmd0aC1yYW5nZSIsIDAsIDUyNDI4ODAwMF0KICAgICAgICAgICAgXQogICAgICAgICAgfTs=
+  signature: rFiPv4i1NNgBxpVldQcohawjaGQ=
+-->
+<!--
+End with error....
+    <Error>
+        <Code>InvalidPolicyDocument</Code>
+        <Message>Invalid Policy: Invalid JSON.</Message>
+        <RequestId>4165C4408DC90610</RequestId>
+        <HostId>
+        2usrWonEzW8m4KrCKhnLT9TZjewbyDLBux6xUJUU7Z6RawRrnsSgwsilu9mu/O9iuAlO9f2cVSc=
+        </HostId>
+    </Error>
+
+    @console log
+    Uncaught TypeError: Cannot use 'in' operator to search for 'transition' in undefined
+    at a (bundle.js:11)
+    at Object.a (bundle.js:11)
+    at Object.<anonymous> (bundle.js:11)
+    at o (bundle.js:5)
+    at Module.<anonymous> (bundle.js:16)
+    at o (bundle.js:5)
+    at Object.<anonymous> (bundle.js:11)
+    at o (bundle.js:5)
+    at n (bundle.js:5)
+    at bundle.js:5
+
+    Failed to load resource: the server responded with a status of 403 (Forbidden)
+    project2aws.s3.amazonaws.com/:1 Failed to load resource: the server responded with a status of 400 (Bad Request)
+-->
+<html>
+  <head>
+    <title>S3 POST Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+ 
+  <body>
+    <form action="https://project2aws.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="key" value="uploads/${filename}">
+      <input type="hidden" name="AWSAccessKeyId" value="AKIAINJGXQDAZ2ON2BDA">
+      <input type="hidden" name="acl" value="private">
+      <input type="hidden" name="success_action_redirect" value="http://localhost/success.html">
+      <input type="hidden" name="policy" value="eyAiZXhwaXJhdGlvbiI6ICIyMDIwLTEyLTAxVDEyOjAwOjAwLjAwMFoiLAogICAgICAgICAgICAiY29uZGl0aW9ucyI6IFsKICAgICAgICAgICAgeyJidWNrZXQiOiAicHJvamVjdDJkb2QifSwKICAgICAgICAgICAgWyJzdGFydHMtd2l0aCIsICIka2V5IiwgIiJdLAogICAgICAgICAgICB7ImFjbCI6ICJwcml2YXRlIn0sICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgIFsic3RhcnRzLXdpdGgiLCAiJENvbnRlbnQtVHlwZSIsICIiXSwKICAgICAgICAgICAgWyJjb250ZW50LWxlbmd0aC1yYW5nZSIsIDAsIDUyNDI4ODAwMF0KICAgICAgICAgICAgXQogICAgICAgICAgfTs=">
+      <input type="hidden" name="signature" value="rFiPv4i1NNgBxpVldQcohawjaGQ=">
+      <input type="hidden" name="Content-Type" value="image/jpeg">
+ 
+      File to upload to S3:
+      <input name="file" type="file">
+      <br>
+      <input type="submit" value="Upload File to S3">
+    </form>
+  </body>
+</html>

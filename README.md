@@ -14,10 +14,8 @@ Getting a picture of what the client needs and which category they fall into.  O
 This project will utilize at least two APIs, possibly a load tester API and an SEO API.
 
 #Roles: 
-Max Rosen, Project Manager, API
-Hitomi Burns - API
-Jianhon Weng- API Routing, Database
-Beth Ehleringer- Front End, HTML Routing
+Max Rosen, Project Manager
+Hitomi, Git Repository Manager
+Jweng
+Beth Ehleringer
 .
-#Updated Schedule
-Presentation January 5
